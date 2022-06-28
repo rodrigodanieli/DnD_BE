@@ -3,18 +3,14 @@
 namespace App\Routes\Auth;
 
 use App\Repository\System\Auth;
-use Exception;
-use Firebase\JWT\JWT;
 use Psr\Http\Message\ServerRequestInterface;
-use Sohris\Core\Utils;
 use Sohris\Http\Annotations\HttpMethod;
 use Sohris\Http\Annotations\Needed;
 use Sohris\Http\Annotations\Route;
-use Sohris\Http\Annotations\SessionJWT;
 use Sohris\Http\Exceptions\StatusHTTPException;
 use Sohris\Http\Response;
-use React\Promise\Promise;
 use Sohris\Http\Router\RouterControllers\DRMRouter;
+use Throwable;
 
 class Login extends DRMRouter
 {
@@ -31,10 +27,10 @@ class Login extends DRMRouter
     {
         $auth = new Auth;
         return $auth->doLoginAdmin($request->REQUEST['username'], $request->REQUEST['password'])->then(function($auth)
-        {
+        {   
             if(!$auth)
-                return Response::Json("INVALID LOGIN");
+                throw new StatusHTTPException("INVALID_LOGIN", 406);
             return Response::Json($auth);
-        }, fn()=>Response::Json("INTERNAL ERROR", 500));
+        });
     }
 }

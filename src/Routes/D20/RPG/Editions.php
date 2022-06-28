@@ -70,7 +70,7 @@ class Editions extends DRMRouter
      * @Needed({
      *  "rpg_id",
      *  "name",
-     *  "version"
+     *  "version",
      *  "release_date"
      * })
      */
