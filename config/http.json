@@ -1,0 +1,49 @@
+{
+    "workers": "1",
+    "host": "0.0.0.0",
+    "port": "80",
+    "upload_files_size" : 1024,
+    "max_upload_files" : 10,
+    "jwt_key": "dungeonMaster",
+    "hostname" : "dmrdanieli",
+    "bhostname": "localhost",
+    "max_concurrent_requests" : 1000,
+    "cors_config": {
+        "allow_credentials": true,
+        "allow_origin": "*",
+        "allow_methods": [
+            "GET",
+            "POST",
+            "OPTIONS",
+            "DELETE",
+            "PUT",
+            "PATCH"
+        ],
+        "allow_headers": [
+            "DNT",
+            "X-Custom-Header",
+            "Keep-Alive",
+            "User-Agent",
+            "X-Requested-With",
+            "If-Modified-Since",
+            "Cache-Control",
+            "Content-Type",
+            "Content-Range",
+            "Range",
+            "Authorization"
+        ],
+        "expose_headers": [
+            "DNT",
+            "X-Custom-Header",
+            "Keep-Alive",
+            "User-Agent",
+            "X-Requested-With",
+            "If-Modified-Since",
+            "Cache-Control",
+            "Content-Type",
+            "Content-Range",
+            "Range"
+        ],
+        "max_age": 1728000
+    }
+}

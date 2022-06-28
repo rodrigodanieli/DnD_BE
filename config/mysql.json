@@ -1,0 +1,9 @@
+{
+    "host"  : "192.168.0.73",
+    "port"  : "3306",
+    "user"  : "user_fe",
+    "pass"  : "!nyhJ5EJ",
+    "base"  : "sysd20",
+    "query_timeout" : 10,
+    "pool_size" : 4
+}
